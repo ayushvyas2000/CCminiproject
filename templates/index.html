@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Language Identifier</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<style>
+  .row{
+    margin-bottom: 1em;
+    color: white;
+  }
+  h1{
+    color: white;
+  }
+  input{
+    border-radius: 5px;
+  }
+</style>
+</head>
+
+<body background="https://source.unsplash.com/1600x900/?cars">
+  <br>
+<div class="container" style="background-color: rgba(0, 119, 255, 0.74); font-family: 'Montserrat', sans-serif; padding: 3%;">
+  <h1><b>Welcome {{session.name}}!!</br></br>Car Price Predictor</b></h1>
+    <br>
+    <form action="{{ url_for('predict')}}"method="post">
+      <div class="row">
+        <div class="col-sm-6">Year</div>
+        <div class="col-sm-6"><input id="first" name="Year" type="number "></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">What is the Showroom Price?(In lakhs)</div>
+        <div class="col-sm-6"><input id="second" name="Present_Price" required="required"></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">How Many Kilometers Driven?</div>
+        <div class="col-sm-6"><input id="third" name="Kms_Driven" required="required"></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">How much owners previously had the car?</div>
+        <div class="col-sm-6"><input id="fourth" name="Owner" required="required"></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">What Is the Fuel type?</div>
+        <div class="col-sm-6"><select name="Fuel_Type_Petrol" id="fuel" required="required">
+          <option value="Petrol">Petrol</option>
+          <option value="Diesel">Diesel</option>
+          <option value="Diesel">CNG</option>
+      </select></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">Are you A Dealer or Individual</div>
+        <div class="col-sm-6"> <select name="Seller_Type_Individual" id="resea" required="required">
+          <option value="Dealer">Dealer</option>
+          <option value="Individual">Individual</option>
+      </select></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">Transmission type</div>
+        <div class="col-sm-6"><select name="Transmission_Mannual" id="research" required="required">
+          <option value="Mannual">Manual Car</option>
+          <option value="Automatic">Automatic Car</option>
+      </select></div>
+      </div>
+      <br><br>
+      <button type="submit" class="btn btn-primary" align="center">Predict</button>
+      <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+    </form>
+    <br>
+    
+
+   <div class="msg bottom" style="color: white;">{{ prediction_text }}</div>
+  </div>
+
+</body>
+</html>

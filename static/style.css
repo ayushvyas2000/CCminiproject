@@ -1,0 +1,60 @@
+/* Store this code in 'style.css' file inside the 'static' folder*/
+
+.container{
+	text-align: center;
+	align-items: center;
+	background-color: rgba(0, 132, 255, 0.548);
+	color: white;
+}
+
+.header{
+	padding: 5px 120px;
+	background-color: #000000;
+	align-content: center;
+}
+
+.border{
+	padding: 80px 50px;
+	border: 1px solid #ffcc00;
+	border-radius: 0px;
+	background-color: #ffcc00;
+}
+
+.btn {
+	padding: 10px 40px;
+	background-color: #ffe066;
+	color: black;
+	font-style: oblique;
+	font-weight: bold;
+	border-radius: 10px;
+}
+
+.textbox{
+	padding: 10px 40px;
+	background-color: #ffe066;
+	color: black;
+	border-radius: 10px;
+}
+	
+::placeholder {
+	color: black;
+	opacity: 1;
+	font-style: oblique;
+	font-weight: bold;
+}
+
+.word{
+	color: black;
+	font-style: oblique;
+	font-weight: bold;
+}
+
+.bottom{
+	color: black;
+	font-style: oblique;
+	font-weight: bold;
+}
+
+.predictor{
+	background-color: black;
+}

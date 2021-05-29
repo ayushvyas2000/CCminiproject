@@ -16,7 +16,6 @@ def preprocess(text):
 
 app2 = Flask(__name__)
 model = pickle.load(open('random_forest_regression_model.pkl', 'rb'))
-vectorizer = pickle.load(open('vectorizer.pkl','rb'))
 app2.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://mikrbmumflodur:feefbda53896a44440ddbff42ecee8052bca8929e22e0e3f606027f99754a9c0@ec2-34-202-54-225.compute-1.amazonaws.com:5432/dbrtjs3dtdmtgl'
 app2.config['SECRET_KEY'] = "Ayush"
 
